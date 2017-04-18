@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Moya
+import Result
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.red;
-
+        
+        self.addTestButton()
 
         if let panRec = self.revealViewController()?.panGestureRecognizer(){
             self.view.addGestureRecognizer(panRec)
@@ -47,6 +50,34 @@ class ViewController: UIViewController {
 
     func somehandler(alert: UIAlertAction!){
         
+    }
+    
+    func addTestButton(){
+        let testButton = UIButton(frame: CGRect(x: 100, y: 100, width: 100, height: 40))
+        testButton.backgroundColor = UIColor.red
+        self.view.addSubview(testButton)
+        testButton.addTarget(self, action:  #selector(makeTestRequest), for: UIControlEvents.touchUpInside)
+    }
+    
+    func makeTestRequest(){
+        let provider = MoyaProvider<TestTarget>()
+        provider.request(.simpleRequest) { result in
+            if let val: Response = result.value{
+                switch val.statusCode{
+                case 200:
+                    print("code 200")
+                    break
+                case 400, 500:
+                    print("code 400, 500")
+                    break
+                default:
+                    print("code - other")
+                    break
+                }
+                
+            }
+            //handle error response
+        }
     }
 }
 

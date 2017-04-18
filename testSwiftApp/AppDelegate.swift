@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SWRevealViewControllerDel
         let main:ViewController = ViewController.init()
         naviController?.viewControllers = [main]
         
-        let sideMenu = ViewController.init()
+        let sideMenu = SideMenuViewController.init()
 //        sideMenu.mainView = main
         
         swreveal = SWRevealViewController.init()
