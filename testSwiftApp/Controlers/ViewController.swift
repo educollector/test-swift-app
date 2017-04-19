@@ -66,6 +66,23 @@ class ViewController: UIViewController {
                 switch val.statusCode{
                 case 200:
                     print("code 200")
+                    do{
+                        //Convert to Data
+                        let jsonData = try! JSONSerialization.data(withJSONObject: val.data, options: JSONSerialization.WritingOptions.prettyPrinted)
+                        let jsonDict = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject]
+
+                        if let jsonDict = jsonDict {
+                            for item in jsonDict {
+                                if let character = Character(map: item) {
+                                    print("----------------------------------------------")
+                                    print(character.description)
+                                }
+                            }
+                        }
+                    }catch{
+                            //TODO: handle
+                    }
+                   
                     break
                 case 400, 500:
                     print("code 400, 500")
