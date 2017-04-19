@@ -11,12 +11,8 @@ import Moya
 
 
 enum TestTarget {
-    case simpleRequest
-    case zen
-    case showUser(id: Int)
-    case createUser(firstName: String, lastName: String)
-    case updateUser(id:Int, firstName: String, lastName: String)
-    case showAccounts
+    case listOfTopArticles
+    case searchForPhrase(phrase: String)
 }
 
 // MARK: - TargetType Protocol Implementation
@@ -24,11 +20,21 @@ enum TestTarget {
 extension TestTarget: TargetType {
     
     var baseURL: URL {
-        return URL(string: "https://api.twitter.com/1.1/")!
+        switch self {
+        case .listOfTopArticles:
+            return URL(string: "https://gameofthrones.wikia.com/api/v1/Articles/Top")!
+        case .searchForPhrase( _):
+            return URL(string: "https://gameofthrones.wikia.com/api/v1/Search/List")!
+        }
     }
     
     var path: String {
-        return "statuses/update.json"
+        switch self {
+            case .listOfTopArticles:
+                return "?expand=1&category=Characters&limit=75"
+        case .searchForPhrase(let phrase):
+                return "?query=\(phrase)&limit=25&minArticleQuality=10&batch=1&namespaces=0%2C14"
+        }
     }
     
     var method: Moya.Method {

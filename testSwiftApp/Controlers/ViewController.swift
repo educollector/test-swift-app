@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     
     func makeTestRequest(){
         let provider = MoyaProvider<TestTarget>()
-        provider.request(.simpleRequest) { result in
+        provider.request(.listOfTopArticles) { result in
             if let val: Response = result.value{
                 switch val.statusCode{
                 case 200:

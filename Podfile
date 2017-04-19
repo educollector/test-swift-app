@@ -7,4 +7,5 @@ target 'testSwiftApp' do
   # Pods for testSwiftApp
 	pod 'Moya'
 	pod 'SnapKit', '~> 3.2.0'
+	pod 'ObjectMapper'
 end
