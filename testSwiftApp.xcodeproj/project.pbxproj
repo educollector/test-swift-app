@@ -15,6 +15,7 @@
 		23D0E5221EA4E10A003FD2AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E5201EA4E10A003FD2AC /* ViewController.swift */; };
 		23D0E5241EA4E19E003FD2AC /* MainCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E5231EA4E19E003FD2AC /* MainCustomViewController.swift */; };
 		23D0E5261EA4E7E5003FD2AC /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D0E5251EA4E7E5003FD2AC /* SideMenuViewController.swift */; };
+		6647C0B61EA8A7F3001F7233 /* CharactersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6647C0B51EA8A7F3001F7233 /* CharactersList.swift */; };
 		6662DE941EA7760400FCFE9A /* TestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662DE921EA7760400FCFE9A /* TestTarget.swift */; };
 		6662DE961EA7761900FCFE9A /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662DE951EA7761900FCFE9A /* Character.swift */; };
 		B02C82F0B3D133F2268211DD /* Pods_testSwiftApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE0F95272AABE32BAF1AC78 /* Pods_testSwiftApp.framework */; };
@@ -33,6 +34,7 @@
 		23D0E5201EA4E10A003FD2AC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23D0E5231EA4E19E003FD2AC /* MainCustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCustomViewController.swift; sourceTree = "<group>"; };
 		23D0E5251EA4E7E5003FD2AC /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		6647C0B51EA8A7F3001F7233 /* CharactersList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharactersList.swift; sourceTree = "<group>"; };
 		6662DE921EA7760400FCFE9A /* TestTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTarget.swift; sourceTree = "<group>"; };
 		6662DE951EA7761900FCFE9A /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		D402FA766ABE07E2D8DFA90F /* Pods-testSwiftApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testSwiftApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testSwiftApp/Pods-testSwiftApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6662DE951EA7761900FCFE9A /* Character.swift */,
+				6647C0B51EA8A7F3001F7233 /* CharactersList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				23D0E5241EA4E19E003FD2AC /* MainCustomViewController.swift in Sources */,
 				23D0E5221EA4E10A003FD2AC /* ViewController.swift in Sources */,
 				6662DE961EA7761900FCFE9A /* Character.swift in Sources */,
+				6647C0B61EA8A7F3001F7233 /* CharactersList.swift in Sources */,
 				23D0E5081EA2AFA6003FD2AC /* AppDelegate.swift in Sources */,
 				23D0E5261EA4E7E5003FD2AC /* SideMenuViewController.swift in Sources */,
 				6662DE941EA7760400FCFE9A /* TestTarget.swift in Sources */,

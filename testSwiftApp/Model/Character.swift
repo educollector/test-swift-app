@@ -19,10 +19,6 @@ class Character: Mappable {
     
     var thumbnail: NSString?
     
-    var imageWidth: NSNumber?
-    
-    var imageHeight: NSNumber?
-    
     var url: NSString?
     
     required convenience init?(map: Map) {
@@ -37,23 +33,20 @@ class Character: Mappable {
     }
     
     var description: String {
-        var _result = " characterId: \(unwrapedDescription(value: characterId))\n"
-        _result += " title: \(unwrapedDescription(value: title))\n"
-        _result += " abstract: \(unwrapedDescription(value: abstract))\n"
-        _result += " thumbnail: \(unwrapedDescription(value: thumbnail))\n"
-        _result += " imageWidth: \(unwrapedDescription(value: imageWidth))\n"
-        _result += " imageHeight: \(unwrapedDescription(value: imageHeight))\n"
-        _result += " url: \(unwrapedDescription(value: url))\n"
+        var _result = "id: \(unwrapedDescription(value: characterId))\n"
+        _result += "title: \(unwrapedDescription(value: title))\n"
+        _result += "abstract: \(unwrapedDescription(value: abstract))\n"
+        _result += "thumbnail: \(unwrapedDescription(value: thumbnail))\n"
+        _result += "url: \(unwrapedDescription(value: url))\n"
         
         return _result
     }
     
     func mapping(map: Map) {
-        characterId      <- map["characterId"]
+        characterId      <- map["id"]
         title            <- map["title"]
         abstract         <- map["abstract"]
-        imageWidth       <- map["imageWidth"]
-        imageHeight      <- map["imageHeight"]
+        thumbnail         <- map["thumbnail"]
         url              <- map["url"]
     }
 

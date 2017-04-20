@@ -9,6 +9,7 @@
 import UIKit
 import Moya
 import Result
+import Alamofire
 
 class ViewController: UIViewController {
 
@@ -66,18 +67,25 @@ class ViewController: UIViewController {
                 switch val.statusCode{
                 case 200:
                     print("code 200")
+                    do {
+                        if let json = try JSONSerialization.jsonObject(with: val.data, options: .allowFragments) as? [String: Any] {
+                            //Implement your logic
+                            
+                            let ch = CharactersList(JSON: json)
+                            print(json)
+                        }
+                    } catch {
+                        print("error in JSONSerialization")
+                    }
+                    
                     do{
-                        //Convert to Data
-                        let jsonData = try! JSONSerialization.data(withJSONObject: val.data, options: JSONSerialization.WritingOptions.prettyPrinted)
-                        let jsonDict = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject]
-
-                        if let jsonDict = jsonDict {
-                            for item in jsonDict {
-                                if let character = Character(map: item) {
-                                    print("----------------------------------------------")
-                                    print(character.description)
-                                }
-                            }
+                        let jsonObject = try JSONSerialization.jsonObject(with: val.data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:AnyObject]
+                        let dictionary: Dictionary? = NSKeyedUnarchiver.unarchiveObject(with: val.data) as? [String : Any]
+                        let jsonString = String(data: val.data, encoding: .utf8)
+                        
+                        if let jsonString = jsonString {
+                            let ch = CharactersList(JSONString: jsonString)
+                            print("...")
                         }
                     }catch{
                             //TODO: handle

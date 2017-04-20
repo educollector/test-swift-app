@@ -31,7 +31,7 @@ extension TestTarget: TargetType {
     var path: String {
         switch self {
             case .listOfTopArticles:
-                return "?expand=1&category=Characters&limit=75"
+                return "?expand=1&category=Characters&limit=5"
         case .searchForPhrase(let phrase):
                 return "?query=\(phrase)&limit=25&minArticleQuality=10&batch=1&namespaces=0%2C14"
         }
